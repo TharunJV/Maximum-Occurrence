@@ -1,0 +1,20 @@
+n = int(input("Enter the number of list:"))
+l1 = []
+count = []
+for i in range(n):
+    a = int(input("Enter the Value:"))
+    l1.append(a)
+    count.append(0)
+print(l1)
+for i in range(n-1):
+    for j in range(i+1,n):
+        if l1[i] == l1[j]:
+            count[i] = count[i]+1
+
+max = 0
+occ = 0
+for k in range(n):
+    if count[k] > max:
+        occ = k
+        max = count[k]
+print(l1[occ])
